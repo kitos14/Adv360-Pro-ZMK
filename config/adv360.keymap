@@ -34,8 +34,8 @@
             label = "BACKSPACE_DELETE";
             #binding-cells = <0>;
             bindings = <&kp H>, <&kp TAB>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_RSFT)>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
         };
     };
 
