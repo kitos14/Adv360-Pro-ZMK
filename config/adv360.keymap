@@ -46,7 +46,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "J_OR_TAB";
             #binding-cells = <0>;
-            bindings = <&kp J>, <&kp TAB>;
+            bindings = <&kp J>, <&shift_tab>;
             mods = <(MOD_LALT)>;
             keep-mods = <(MOD_LALT)>;
         };
@@ -55,7 +55,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "K_OR_TAB";
             #binding-cells = <0>;
-            bindings = <&kp K>, <&shift_tab>;
+            bindings = <&kp K>, <&kp TAB>;
             mods = <(MOD_LALT)>;
             keep-mods = <(MOD_LALT)>;
         };
