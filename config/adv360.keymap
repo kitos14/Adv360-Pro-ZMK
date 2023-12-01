@@ -28,12 +28,34 @@
       };
     };
 
-    behaviors {
-        h_ctrl: h_ctrl {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
+    macros {
+        shift_tab: shift_tab {
+            label = "Shift_Tab";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp H>, <&kp TAB>;
+            bindings
+                = <&macro_press &kp LSHFT &kp K>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+
+    behaviors {
+        j_tab: j_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "J_OR_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&kp TAB>;
+            mods = <(MOD_LALT)>;
+            keep-mods = <(MOD_LALT)>;
+        };
+
+        k_tab: k_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "K_OR_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&shift_tab>;
             mods = <(MOD_LALT)>;
             keep-mods = <(MOD_LALT)>;
         };
@@ -46,7 +68,7 @@
       bindings = <
         &kp EQUAL &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                           &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                            &none &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &h_ctrl  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+        &kp ESC   &kp A     &kp S    &kp D    &kp F      &kp G  &none           &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &none &kp H  &j_tab  &k_tab     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                            &kp HOME &kp PG_UP                           &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp LALT   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp UP &kp DOWN  &kp LBKT &kp RBKT &mo 2
       >;
