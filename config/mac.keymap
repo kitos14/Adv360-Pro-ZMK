@@ -1,0 +1,16 @@
+#include <behaviors.dtsi>
+
+/ {
+macros {
+        shift_tab: shift_tab {
+            label = "Shift_Tab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+    };
+};
