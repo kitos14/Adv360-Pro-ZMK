@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
+#include "mac.keymap"
 
 / {
     behaviors {
@@ -42,15 +43,6 @@
     };
 
     behaviors {
-        j_tab: j_tab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "J_OR_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp J>, <&shift_tab>;
-            mods = <(MOD_RALT)>;
-            keep-mods = <(MOD_RALT)>;
-        };
-
         k_tab: k_tab {
             compatible = "zmk,behavior-mod-morph";
             label = "K_OR_TAB";
